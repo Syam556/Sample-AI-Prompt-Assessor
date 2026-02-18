@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PromptVault - AI Prompt Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🚀 PromptVault</h1>
+    <p>Manage and Optimize Your AI Prompts</p>
+</header>
+
+<section class="container">
+
+
+    <div class="card">
+        <h2>Add / Update Prompt</h2>
+        <form id="promptForm">
+
+            <input type="hidden" id="editIndex">
+
+            <label>Prompt Title</label>
+            <input type="text" id="title" required>
+
+            <label>Category</label>
+            <input type="text" id="category" required>
+
+            <label>Prompt Content</label>
+            <textarea id="content" rows="4" required></textarea>
+
+            <label>Status</label>
+            <select id="status">
+                <option value="Draft">Draft</option>
+                <option value="Production">Production</option>
+                <option value="Deprecated">Deprecated</option>
+            </select>
+
+            <label>Performance Rating (1-5)</label>
+            <input type="number" id="rating" min="1" max="5" required>
+
+            <button type="submit" id="submitBtn">Save Prompt</button>
+            <button type="button" id="clearBtn">Clear</button>
+
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Search Prompts</h2>
+        <input type="text" id="searchInput" placeholder="Search by title or category...">
+    </div>
+
+    <div class="card">
+        <h2>Stored Prompts</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="promptTable"></tbody>
+            </table>
+        </div>
+        <p id="noDataMessage"></p>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
